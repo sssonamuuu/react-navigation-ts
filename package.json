@@ -1,8 +1,9 @@
 {
   "name": "react-navigation-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
+  "typings": "src/index.ts",
   "scripts": {
     "build": "rollup -c"
   },
@@ -15,6 +16,20 @@
   "bugs": {
     "url": "https://github.com/sssonamuuu/react-navigation-ts/issues"
   },
+  "keywords": [
+    "react",
+    "react-router",
+    "router",
+    "typescript",
+    "ts",
+    "navigation"
+  ],
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist",
+    "src"
+  ],
   "homepage": "https://github.com/sssonamuuu/react-navigation-ts#readme",
   "dependencies": {
     "history": "4.10.1",
