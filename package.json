@@ -1,0 +1,44 @@
+{
+  "name": "react-navigation-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sssonamuuu/react-navigation-ts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sssonamuuu/react-navigation-ts/issues"
+  },
+  "homepage": "https://github.com/sssonamuuu/react-navigation-ts#readme",
+  "dependencies": {
+    "history": "4.10.1",
+    "qs": "6.10.3",
+    "react": "17.0.2",
+    "react-router-dom": "5.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.14.5",
+    "@babel/plugin-transform-runtime": "7.14.5",
+    "@babel/preset-env": "7.14.5",
+    "@rollup/plugin-babel": "5.3.0",
+    "@rollup/plugin-commonjs": "19.0.0",
+    "@rollup/plugin-node-resolve": "13.0.0",
+    "@rollup/plugin-typescript": "8.2.1",
+    "@types/qs": "6.9.7",
+    "@types/react-router-dom": "5.3.3",
+    "@typescript-eslint/eslint-plugin": "4.26.1",
+    "@typescript-eslint/parser": "4.26.1",
+    "eslint": "7.28.0",
+    "rollup": "2.51.2",
+    "rollup-plugin-terser": "7.0.2",
+    "rollup-plugin-uglify": "6.0.4",
+    "tslib": "2.3.0",
+    "typescript": "4.3.2"
+  }
+}
