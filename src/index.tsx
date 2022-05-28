@@ -28,16 +28,18 @@ export interface ReactNavigationData {
   [key: string]: ReactNavigationItemProps<unknown>;
 }
 
+export type ReactNavigationLinkType = 'push' | 'replace' | 'link' | 'open';
+
 const DEFAULT_LAYOUT_MAP_KEY = 'default';
 
 export default class ReactNavigation<O extends ReactNavigationData> {
   public history = createBrowserHistory();
 
   /** 数据 */
-  private array: ReactNavigationItemProps<unknown>[];
+  public array: ReactNavigationItemProps<unknown>[];
 
   /** 以 url(全小写，带首/) 为 key，方便通过url查找查找 (不包含带有 pathparam 的地址 如 /:id) */
-  private maps: ReactNavigationData = {};
+  public maps: ReactNavigationData = {};
 
   /**
    * 所有 pathparam 的地址，如果 path 中有两个，会被分解未两个
@@ -216,5 +218,16 @@ export default class ReactNavigation<O extends ReactNavigationData> {
         </Switch>
       </Router>
     );
+  }
+
+  linkComponent <K extends keyof O>(...[key, type, params]: void extends O[K]['$query'] ? [K, ReactNavigationLinkType] : [K, ReactNavigationLinkType, O[K]['$query'] ]) {
+    return <a
+      href={this.formatUrl(key, params)}
+      onClick={e => {
+      /** 阻止默认事件，避免点击默认的href跳转 */
+        e.preventDefault();
+        e.nativeEvent.preventDefault();
+        this[type](...[key, params] as any);
+      }}/>;
   }
 }

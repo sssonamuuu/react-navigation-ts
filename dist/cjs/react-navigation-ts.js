@@ -1,4 +1,4 @@
-/** @license react-navigation-ts v1.0.4
+/** @license react-navigation-ts v1.0.5
  * react-navigation-ts.js
  * 
  * Copyright (c) 
@@ -178,6 +178,14 @@ class ReactNavigation {
                 const children = routes.map(child => React__default['default'].createElement(reactRouterDom.Route, { key: `${child.path}`, exact: true, path: child.path, component: this.asyncLoadComponent(child.component) }));
                 return layout === DEFAULT_LAYOUT_MAP_KEY ? children : React__default['default'].createElement(reactRouterDom.Route, { key: `${paths}`, exact: true, path: paths }, React.createElement(layout, { children }));
             }))));
+    }
+    linkComponent(...[key, type, params]) {
+        return React__default['default'].createElement("a", { href: this.formatUrl(key, params), onClick: e => {
+                /** 阻止默认事件，避免点击默认的href跳转 */
+                e.preventDefault();
+                e.nativeEvent.preventDefault();
+                this[type](...[key, params]);
+            } });
     }
 }
 
