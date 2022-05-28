@@ -1,4 +1,4 @@
-/** @license react-navigation-ts v1.0.3
+/** @license react-navigation-ts v1.0.4
  * react-navigation-ts.js
  * 
  * Copyright (c) 

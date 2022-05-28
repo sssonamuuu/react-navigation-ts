@@ -9,6 +9,11 @@ export interface ReactNavigationItemProps<Q> {
   path: string | string[];
   component: () => Promise<{ default: ComponentType<any> }>;
   layout?: ComponentType<any> | false;
+  title: string;
+  /** 用于指定部分不在菜单上的路由指定当前菜单 */
+  activeMenusPath?: string;
+  /** 面包屑 urls，默认最后一级是自身，第一级是首页 */
+  breadCrumb?: string[];
   queryFormat?: {[K in keyof Q]?: ReactNavigationParamType};
   $query?: Q;
 }
